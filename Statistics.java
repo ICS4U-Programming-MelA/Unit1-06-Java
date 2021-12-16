@@ -2,7 +2,7 @@
 //
 // Created By: Mel Aguoth
 // Date: December 10-12, 2021
-// Calculates the mean, median, and mode of numbers taken from three files.
+// Calculates the mean, median, and mode of numbers taken from one of three files.
 
 // Import modules.
 import java.io.File;
@@ -108,16 +108,16 @@ class Statistics {
 
     // Introduce the program.
     System.out.print("This program calculates the mean, median and mode of numbers it"
-                   + " takes from textfiles.");
+                   + " takes from a chosen text file.");
     Scanner input = new Scanner(System.in);
 
-    // Get the user's specified textfile.
-    System.out.print("\n" + "Enter the textfile you wish to use (set1, set2, or set3): ");
+    // Get the user's specified text file.
+    System.out.print("\n" + "Enter the text file you wish to use (set1, set2, or set3): ");
     String userSetChoice = input.next();
     input.close();
     try {
 
-      // Add the number's from the user's chosen textfile to the list.
+      // Add the numbers from the user's chosen text file to the list.
       File file = new File(userSetChoice);
       Scanner sc = new Scanner(file);
       while (sc.hasNextLine()) {
@@ -146,9 +146,9 @@ class Statistics {
       System.out.print("\n" + "The mode(s) is/are: " + Arrays.toString(modeSet1));
       System.out.print("\n");
 
-    // If the user's textfile isn't valid, display as such to the user.
+    // If the user's text file isn't valid, display as such to the user.
     } catch (FileNotFoundException e1) {
-      System.out.print("\n" + "That isn't a valid textfile. Please try again.");
+      System.out.print("\n" + "That isn't a valid text file. Please try again.");
       System.out.print("\n");
     }
   }
